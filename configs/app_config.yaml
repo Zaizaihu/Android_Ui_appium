@@ -1,0 +1,4 @@
+apps:
+  mi_personal_assistant:
+    appPackage: "com.xiaomi.shop"
+    appActivity: "coem.xiaomi.shop2.activity.MainActivity"  # 替换为正确的 Activity

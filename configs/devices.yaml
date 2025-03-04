@@ -1,0 +1,16 @@
+devices:
+  O10:
+    platformName: "Android"
+    platformVersion: "15"
+    deviceName: "O10"
+    udid: "EIW4VKRWI78TWC7L"
+    automationName: "UiAutomator2"
+    noReset: True
+
+  device_2:
+    platformName: "Android"
+    platformVersion: "14"
+    deviceName: "Pixel_6"
+    udid: "ABCD1234"
+    automationName: "UiAutomator2"
+    noReset: True

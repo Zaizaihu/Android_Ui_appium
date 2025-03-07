@@ -18,6 +18,15 @@ with open(devices_config_path, 'r', encoding='utf-8') as f:
 
 class DriverManager:
     _instance = None  # 单例实例
+    driver = None
+
+    @classmethod
+    def set_driver(cls, driver):
+        """
+        设置 Appium 驱动实例
+        :param driver: Appium 驱动实例
+        """
+        cls._driver = driver
 
     @classmethod
     def get_driver(cls, device_name="O10", app_name="mi_personal_assistant"):

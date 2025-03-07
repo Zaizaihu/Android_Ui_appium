@@ -1,4 +1,8 @@
 from utils.element_finder import ElementFinder
+import os
+from utils.logger import setup_logger
+
+logger = setup_logger()
 
 class BasePage:
     def __init__(self, driver):
@@ -82,3 +86,14 @@ class BasePage:
         if element:
             return element.is_displayed()
         return False
+
+    def take_screenshot(self, file_name):
+        screenshot_dir = 'logs/screenshots'
+        if not os.path.exists(screenshot_dir):
+            os.makedirs(screenshot_dir)
+        file_path = os.path.join(screenshot_dir, file_name)
+        try:
+            self.driver.save_screenshot(file_path)
+            logger.info(f"Screenshot saved to {file_path}")
+        except Exception as e:
+            logger.error(f"Failed to take screenshot: {e}")
